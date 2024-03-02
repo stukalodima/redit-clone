@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:15.3-alpine
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=corporate-book
+    ports:
+      - 5432:5432
