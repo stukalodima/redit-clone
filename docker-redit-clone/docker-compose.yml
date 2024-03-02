@@ -6,6 +6,6 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=corporate-book
+      - POSTGRES_DB=redit-clone
     ports:
       - 5432:5432
