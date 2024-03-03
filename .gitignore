@@ -1,4 +1,4 @@
-/docker-redit-clone/db/*
-/.idea/*
-/.gradle/*
-/build/*
+docker-redit-clone/db
+.idea
+.gradle
+build
