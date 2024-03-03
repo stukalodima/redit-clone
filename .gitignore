@@ -2,3 +2,4 @@ docker-redit-clone/db
 .idea
 .gradle
 build
+frontend/generated

@@ -24,8 +24,8 @@ public class UserController {
     }
 
     @GetMapping("/list")
-    public String list() {
-        List<User> list = userService.list();
-        return String.valueOf(new ResponseEntity<>(list.toString(), OK));
+    public ResponseEntity<List<UserDTO>> list() {
+        List<UserDTO> list = userService.listDTO();
+        return new ResponseEntity<>(list, OK);
     }
 }

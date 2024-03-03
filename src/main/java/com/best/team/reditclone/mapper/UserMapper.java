@@ -5,19 +5,23 @@ import com.best.team.reditclone.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserMapper {
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "login", source = "username")
-    @Mapping(target = "email", source = "email")
-    @Mapping(target = "password", source = "password")
-    @Mapping(target ="displayName", expression = "java(userDTO.getFirstName() + \" \" + userDTO.getLastName())")
-    @Mapping(target = "ava", constant = "null")
-    @Mapping(target = "active", constant = "true")
-    @Mapping(target = "firstName", source = "firstName")
-    @Mapping(target = "lastName", source = "lastName")
+    @Mapping(source = "login", target = "username")
+    @Mapping(source = "firstName", target = "firstName")
+    @Mapping(source = "lastName", target = "lastName")
+    @Mapping(source = "email", target = "email")
     UserDTO map(User user);
 
+    @Mapping(source = "username", target = "login")
+    @Mapping(source = "firstName", target = "firstName")
+    @Mapping(source = "lastName", target = "lastName")
+    @Mapping(source = "email", target = "email")
+    @Mapping(source = "password", target = "password")
+    @Mapping(target = "ava", ignore = true)
+    @Mapping(target= "id", ignore = true)
+    @Mapping(target = "displayName", expression = "java(userDTO.getFirstName() + \" \" + userDTO.getLastName())")
+    @Mapping(target = "active", constant = "true")
     User map(UserDTO userDTO);
 
 }
