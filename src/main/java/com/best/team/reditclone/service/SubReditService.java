@@ -20,4 +20,8 @@ public class SubReditService {
     public List<SubRedit> list() {
         return subReditRepository.findAll();
     }
+
+    public SubRedit findById(long id) {
+        return subReditRepository.findById(id);
+    }
 }

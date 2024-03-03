@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SubReditRepository extends JpaRepository<SubRedit,Long> {
+    SubRedit findById(long id);
 }
