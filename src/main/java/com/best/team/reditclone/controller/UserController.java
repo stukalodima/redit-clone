@@ -18,18 +18,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/signup")
-    public String signup(@RequestBody UserDTO ignoredUserDTO) {
-        User user = User.with()
-                .displayName("test")
-                .login("test")
-                .firstName("test")
-                .lastName("test")
-                .password("test")
-                .ava(null)
-                .email("test")
-                .active(true)
-                .build();
-        userService.save(user);
+    public String signup(@RequestBody UserDTO userDTO) {
+        userService.save(userDTO);
         return String.valueOf(new ResponseEntity<>("User registration successful", OK));
     }
 
