@@ -1,0 +1,13 @@
+html {
+    vaadin-text-field.search-field {
+
+        &::part(label) {
+            display: none;
+        }
+
+        &[has-value] {
+            padding: 0;
+        }
+    }
+
+}

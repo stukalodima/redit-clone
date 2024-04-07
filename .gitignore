@@ -3,3 +3,4 @@ docker-redit-clone/db
 .gradle
 build
 frontend/generated
+/src/main/bundles/dev.bundle
